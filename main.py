@@ -10,7 +10,7 @@ import time
 
 
 IMAGE_PATH = os.path.join(os.getenv("LocalAppData"), "NASA_Api")
-SCREEN = (2048, 2048)
+SCREEN = None
 
 
 def check_or_create_image_path() -> None:
@@ -67,7 +67,6 @@ def check_wallpapers() -> Tuple[str, List[str], List[str]]:
     :return: latest, valid, invalid
     """
     files = os.listdir(IMAGE_PATH)
-    print(files)
 
     # valdate files
     invalid = []
@@ -232,6 +231,10 @@ if __name__ == "__main__":
     while True:  # Checks for new data every half hour
         check_or_create_image_path()
         check_new_data()
+
+        for thread in threading.enumerate()[1:]:
+            thread.join()
+
         no = len(os.listdir(IMAGE_PATH))
         for file in reversed(os.listdir(IMAGE_PATH)):
             ctypes.windll.user32.SystemParametersInfoW(20, 0, os.path.join(IMAGE_PATH, file), 0)
