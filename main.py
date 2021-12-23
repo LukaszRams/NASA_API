@@ -7,6 +7,14 @@ from datetime import datetime
 from typing import List, Tuple
 import threading
 import time
+import sys
+
+
+import socket
+import win32serviceutil
+import servicemanager
+import win32event
+import win32service
 
 
 IMAGE_PATH = os.path.join(os.getenv("LocalAppData"), "NASA_Api")
@@ -225,17 +233,57 @@ class Download(threading.Thread):
         image.save(image_path)
 
 
-if __name__ == "__main__":
-    set_screen_resolution()
 
-    while True:  # Checks for new data every half hour
-        check_or_create_image_path()
-        check_new_data()
+class WinService(win32serviceutil.ServiceFramework):
+    _svc_name_ = 'nasaApi'
+    _svc_display_name_ = 'NASA Api'
+    _svc_description_ = 'Service using EPIC DAILY "BLUE MARBLE" API to download ' \
+                        'satellite images of the Earth and set them as wallpaper'
 
-        for thread in threading.enumerate()[1:]:
-            thread.join()
+    def __init__(self,args):
+        win32serviceutil.ServiceFramework.__init__(self,args)
+        self.hWaitStop = win32event.CreateEvent(None,0,0,None)
+        socket.setdefaulttimeout(60)
 
-        no = len(os.listdir(IMAGE_PATH))
-        for file in reversed(os.listdir(IMAGE_PATH)):
-            ctypes.windll.user32.SystemParametersInfoW(20, 0, os.path.join(IMAGE_PATH, file), 0)
-            time.sleep(1800//no)
+    def SvcStop(self):
+        self.ReportServiceStatus(win32service.SERVICE_STOP_PENDING)
+        win32event.SetEvent(self.hWaitStop)
+
+    def SvcDoRun(self):
+        self.ReportServiceStatus(win32service.SERVICE_START_PENDING)
+        servicemanager.LogMsg(servicemanager.EVENTLOG_INFORMATION_TYPE,
+                              servicemanager.PYS_SERVICE_STARTED,
+                              (self._svc_name_,''))
+        self.main()
+
+    def main(self):
+        self.ReportServiceStatus(win32service.SERVICE_RUNNING)
+        set_screen_resolution()
+
+        while True:  # Checks for new data every half hour
+            check_or_create_image_path()
+            check_new_data()
+
+            for thread in threading.enumerate()[1:]:
+                thread.join()
+
+            no = len(os.listdir(IMAGE_PATH))
+
+            for file in os.listdir(IMAGE_PATH):
+                ctypes.windll.user32.SystemParametersInfoW(20, 0, os.path.join(IMAGE_PATH, file), 0)
+                if win32event.WaitForSingleObject(self.hWaitStop, (1800*1000) // no) == win32event.WAIT_OBJECT_0:
+                    self.stop = True
+                    break
+            if self.stop:
+                self.stop = False
+                break
+        self.ReportServiceStatus(win32service.SERVICE_STOPPED)
+
+
+def main():
+    if len(sys.argv) > 1:
+        win32serviceutil.HandleCommandLine(WinService)
+    else:
+        servicemanager.Initialize()
+        servicemanager.PrepareToHostSingle(WinService)
+        servicemanager.StartServiceCtrlDispatcher()
