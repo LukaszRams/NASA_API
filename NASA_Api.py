@@ -7,15 +7,6 @@ from datetime import datetime
 from typing import List, Tuple
 import threading
 import time
-import sys
-
-
-import socket
-import win32serviceutil
-import servicemanager
-import win32event
-import win32service
-
 
 IMAGE_PATH = os.path.join(os.getenv("LocalAppData"), "NASA_Api")
 SCREEN = None
@@ -37,35 +28,40 @@ def check_new_data() -> None:
     """
 
     # get last image
-    request = requests.get("https://epic.gsfc.nasa.gov/api/natural")
-    request = request.json()
-    record = request[-1]
+    try:
+        request = requests.get("https://epic.gsfc.nasa.gov/api/natural")
+        if request.status_code == 200:
+            request = request.json()
+            record = request[-1]
 
-    # generate code
-    code = generate_code(record["date"])
+            # generate code
+            code = generate_code(record["date"])
 
-    # check actual wallpapers
-    latest, valid, invalid = check_wallpapers()
+            # check actual wallpapers
+            latest, valid, invalid = check_wallpapers()
 
-    # delete invalid files and folders
-    if invalid:
-        delete_files(invalid)
+            # delete invalid files and folders
+            if invalid:
+                delete_files(invalid)
 
-    # check for new images
-    if not latest or latest < code:
-        # download the latest photos
-        for dict_ in request:
-            code = generate_code(dict_["date"])
+            # check for new images
+            if not latest or latest < code:
 
-            # create Thread object
-            download = Download(code, dict_["image"])
+                # download the latest photos
+                for dict_ in request:
+                    code = generate_code(dict_["date"])
 
-            # start Thread object
-            download.start()
+                    # create Thread object
+                    download = Download(code, dict_["image"])
 
-        # delete old valid
-        if valid:
-            delete_files(valid)
+                    # start Thread object
+                    download.start()
+
+                # delete old valid
+                if valid:
+                    delete_files(valid)
+    except requests.exceptions.ConnectionError:
+        pass
 
 
 def check_wallpapers() -> Tuple[str, List[str], List[str]]:
@@ -167,7 +163,6 @@ class Download(threading.Thread):
         """
         self.download_and_save_image(self.code, self.image_name)
 
-
     def download_and_save_image(self, code: str, image_name: str) -> None:
         """
         Downloads and saves an image in a folder
@@ -179,24 +174,24 @@ class Download(threading.Thread):
         :param image_name: Name of image in api
         :return: None
         """
+        try:
+            request = requests.get(
+                f"https://epic.gsfc.nasa.gov/archive/natural/{code[0:4]}/{code[4:6]}/{code[6:8]}/png/{image_name}.png")
+            if request.status_code == 200:
+                # path to image
+                image_path = os.path.join(IMAGE_PATH, code + ".png")
 
-        request = requests.get(
-            f"https://epic.gsfc.nasa.gov/archive/natural/{code[0:4]}/{code[4:6]}/{code[6:8]}/png/{image_name}.png")
+                # save image
+                with open(image_path, "wb") as f:
+                    f.write(request.content)
 
-        # check if get return succes code
-        if request.status_code == 200:
-            # path to image
-            image_path = os.path.join(IMAGE_PATH, code + ".png")
+                # resize image
+                self.change_size(image_path, code)
+        except requests.exceptions.ConnectionError:
+            pass
 
-            # save image
-            with open(image_path, "wb") as f:
-                f.write(request.content)
-
-            # resize image
-            self.change_size(image_path, code)
-
-
-    def change_size(self, image_path: str, code: str) -> None:
+    @staticmethod
+    def change_size(image_path: str, code: str) -> None:
         """
         Creates a new image from an existing one based on the monitor dimensions and includes
         information about the image's origin
@@ -224,66 +219,32 @@ class Download(threading.Thread):
         rotated = text_image.rotate(90, expand=True, fillcolor="white")
 
         # paste image with text
-        image.paste(rotated, (SCREEN[0]-50, (SCREEN[1]-600)//2))
+        image.paste(rotated, (SCREEN[0] - 50, (SCREEN[1] - 600) // 2))
 
         # paste earth_image
-        image.paste(original_image, ((SCREEN[0]-SCREEN[1])//2, 0))
+        image.paste(original_image, ((SCREEN[0] - SCREEN[1]) // 2, 0))
 
         # save image
         image.save(image_path)
 
 
-
-class WinService(win32serviceutil.ServiceFramework):
-    _svc_name_ = 'nasaApi'
-    _svc_display_name_ = 'NASA Api'
-    _svc_description_ = 'Service using EPIC DAILY "BLUE MARBLE" API to download ' \
-                        'satellite images of the Earth and set them as wallpaper'
-
-    def __init__(self,args):
-        win32serviceutil.ServiceFramework.__init__(self,args)
-        self.hWaitStop = win32event.CreateEvent(None,0,0,None)
-        socket.setdefaulttimeout(60)
-
-    def SvcStop(self):
-        self.ReportServiceStatus(win32service.SERVICE_STOP_PENDING)
-        win32event.SetEvent(self.hWaitStop)
-
-    def SvcDoRun(self):
-        self.ReportServiceStatus(win32service.SERVICE_START_PENDING)
-        servicemanager.LogMsg(servicemanager.EVENTLOG_INFORMATION_TYPE,
-                              servicemanager.PYS_SERVICE_STARTED,
-                              (self._svc_name_,''))
-        self.main()
-
-    def main(self):
-        self.ReportServiceStatus(win32service.SERVICE_RUNNING)
-        set_screen_resolution()
-
-        while True:  # Checks for new data every half hour
-            check_or_create_image_path()
-            check_new_data()
-
-            for thread in threading.enumerate()[1:]:
-                thread.join()
-
-            no = len(os.listdir(IMAGE_PATH))
-
-            for file in os.listdir(IMAGE_PATH):
-                ctypes.windll.user32.SystemParametersInfoW(20, 0, os.path.join(IMAGE_PATH, file), 0)
-                if win32event.WaitForSingleObject(self.hWaitStop, (1800*1000) // no) == win32event.WAIT_OBJECT_0:
-                    self.stop = True
-                    break
-            if self.stop:
-                self.stop = False
-                break
-        self.ReportServiceStatus(win32service.SERVICE_STOPPED)
-
-
 def main():
-    if len(sys.argv) > 1:
-        win32serviceutil.HandleCommandLine(WinService)
-    else:
-        servicemanager.Initialize()
-        servicemanager.PrepareToHostSingle(WinService)
-        servicemanager.StartServiceCtrlDispatcher()
+    set_screen_resolution()
+    global SCREEN
+
+    while True:  # Checks for new data every half hour
+        check_or_create_image_path()
+
+        check_new_data()
+        for thread in threading.enumerate()[2:]:
+            thread.join()
+
+        no = len(os.listdir(IMAGE_PATH))
+
+        for file in os.listdir(IMAGE_PATH):
+            ctypes.windll.user32.SystemParametersInfoW(20, 0, os.path.join(IMAGE_PATH, file), 1 | 2)
+            time.sleep(1800 // no)
+
+
+if __name__ == '__main__':
+    main()

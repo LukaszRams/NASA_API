@@ -6,7 +6,6 @@ and set them as a desktop background.
 The application is equipped with automatic detection of incorrect files in the source folder, deleting them 
 and if new data is available updating.
 
-The software ultimately runs as a Windows service
 
 ***Application created for educational purposes only***   
 
@@ -29,32 +28,13 @@ The software ultimately runs as a Windows service
 
         >>> pip install -r requirements.txt
         
-4. Build your service
+4. Build your application
 
-        >>> python setup.py py2exe
+        >>> pyinstaller -F --windowed --specpath=./nasaApi/build --workpath=./nasaApi/build --distpath=./nasaApi NASA_Api.py
 
-### Installing
 
-1. Copy the dist folder to a convenient location
+### Launching
 
-2. Open the terminal and go to the folder
+Go to the ***nasaApi*** folder and double-click on ***NASA_Api.exe***
 
-        >>> cd path\to\folder\dist
-
-3. Install the service
-
-        >>> main.exe -install
-
-4. Set start-up mode (default is manual)
-
-        >>> sc config nasaApi start=auto
-
-5. Start the service
-
-        >>> sc start nasaApi
-    
-If you want to configure the service in more detail, run:
-
-    >>> services.msc
-    
-Find the ***NASA Api*** service, then double-click on it with the left mouse button
+*If you want the application to run automatically on startup, add it to the autostart*
