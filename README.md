@@ -18,7 +18,7 @@ and if new data is available updating.
 1. Go to the repository folder and create a new virtual environment
 
         >>> cd path\to\repository
-        >>> python -mvenv venv
+        >>> python -m venv venv
         
 2.  Activate the environment
 
