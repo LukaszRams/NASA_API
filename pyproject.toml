@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "nasa-api"
+version = "0.1.0"
+description = "An application using the EPIC DAILY \"BLUE MARBLE\" API to download images of the earth, edit them and set them as a desktop background."
+authors = ["Łukasz Rams <lukaszrams2@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">3.10,<3.13"
+pillow = "^10.2.0"
+requests = "^2.31.0"
+pywin32 = "^306"
+
+[tool.poetry.group.dev.dependencies]
+pyinstaller = "^6.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

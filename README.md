@@ -1,6 +1,6 @@
 # NASA Api for wallpapers
 
-An application using the "EPIC DAILY "BLUE MARBLE" API" to download images of the earth, edit them 
+An application using the **EPIC DAILY "BLUE MARBLE" API** to download images of the earth, edit them 
 and set them as a desktop background.
 
 The application is equipped with automatic detection of incorrect files in the source folder, deleting them 
@@ -13,25 +13,31 @@ and if new data is available updating.
 
 
 ## Instruction
+
+### Development
+1. Use Poetry to create virtual environment and install dependencies
+```commandline
+python -m poetry shell
+poetry install
+```
+
+2. Run code
+```commandline
+python NASA_Api.py
+```
+
 ### Building
 
-1. Go to the repository folder and create a new virtual environment
-
-        >>> cd path\to\repository
-        >>> python -m venv venv
+1. Use Poetry to create virtual environment and install dependencies
+```commandline
+python -m poetry shell
+poetry install
+```
         
-2.  Activate the environment
-
-        >>> venv\Scripts\activate.bat
-        
-3. Install packages from ***requirements.txt*** file
-
-        >>> pip install -r requirements.txt
-        
-4. Build your application
-
-        >>> pyinstaller -F --windowed --specpath=./nasaApi/build --workpath=./nasaApi/build --distpath=./nasaApi NASA_Api.py
-
+2. Build your application
+```commandline
+pyinstaller -F --windowed --specpath=./nasaApi/build --workpath=./nasaApi/build --distpath=./nasaApi NASA_Api.py
+```
 
 ### Launching
 
