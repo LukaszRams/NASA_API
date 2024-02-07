@@ -3,3 +3,4 @@ venv
 __pycache__/
 dist/
 nasaApi/
+NASA_API.log
