@@ -7,9 +7,8 @@ from datetime import datetime
 from typing import List, Tuple
 import threading
 import time
+from config import config
 
-IMAGE_PATH = os.path.join(os.getenv("LocalAppData"), "NASA_Api")
-SCREEN = None
 
 
 def check_or_create_image_path() -> None:
@@ -17,8 +16,8 @@ def check_or_create_image_path() -> None:
     Checks if the folder for graphics exists if not creates it
     :return: None
     """
-    if not os.path.exists(IMAGE_PATH):
-        os.makedirs(IMAGE_PATH)
+    if not os.path.exists(config.config.image_path):
+        os.makedirs(config.config.image_path)
 
 
 def check_new_data() -> None:
@@ -70,9 +69,9 @@ def check_wallpapers() -> Tuple[str, List[str], List[str]]:
     image to be downloaded and returns error information about the folder
     :return: latest, valid, invalid
     """
-    files = os.listdir(IMAGE_PATH)
+    files = os.listdir(config.config.image_path)
 
-    # valdate files
+    # validate files
     invalid = []
     valid = []
     max_date = datetime.now()
@@ -107,7 +106,7 @@ def check_wallpapers() -> Tuple[str, List[str], List[str]]:
             continue
 
         # check file size
-        if Image.open(os.path.join(IMAGE_PATH, file)).size != SCREEN:
+        if Image.open(os.path.join(config.image_path, file)).size != SCREEN:
             invalid.append(file)
             continue
 
@@ -123,7 +122,7 @@ def delete_files(files: List[str]) -> None:
     :return: None
     """
     for file in files:
-        path = os.path.join(IMAGE_PATH, file)
+        path = os.path.join(config.image_path, file)
         if os.path.isfile(path):
             os.remove(path)
         else:
@@ -179,14 +178,14 @@ class Download(threading.Thread):
                 f"https://epic.gsfc.nasa.gov/archive/natural/{code[0:4]}/{code[4:6]}/{code[6:8]}/png/{image_name}.png")
             if request.status_code == 200:
                 # path to image
-                image_path = os.path.join(IMAGE_PATH, code + ".png")
+                config.image_path = os.path.join(config.image_path, code + ".png")
 
                 # save image
-                with open(image_path, "wb") as f:
+                with open(config.image_path, "wb") as f:
                     f.write(request.content)
 
                 # resize image
-                self.change_size(image_path, code)
+                self.change_size(config.image_path, code)
         except requests.exceptions.ConnectionError:
             pass
 
@@ -225,13 +224,10 @@ class Download(threading.Thread):
         image.paste(original_image, ((SCREEN[0] - SCREEN[1]) // 2, 0))
 
         # save image
-        image.save(image_path)
+        image.save(config.image_path)
 
 
 def main():
-    set_screen_resolution()
-    global SCREEN
-
     while True:  # Checks for new data every half hour
         check_or_create_image_path()
 
@@ -239,10 +235,10 @@ def main():
         for thread in threading.enumerate()[2:]:
             thread.join()
 
-        no = len(os.listdir(IMAGE_PATH))
+        no = len(os.listdir(config.image_path))
 
-        for file in os.listdir(IMAGE_PATH):
-            ctypes.windll.user32.SystemParametersInfoW(20, 0, os.path.join(IMAGE_PATH, file), 1 | 2)
+        for file in os.listdir(config.image_path):
+            ctypes.windll.user32.SystemParametersInfoW(20, 0, os.path.join(config.image_path, file), 1 | 2)
             time.sleep(1800 // no)
 
 

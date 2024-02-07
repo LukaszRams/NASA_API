@@ -1,0 +1,360 @@
+2024-02-07 22:15:07,874   [  DEBUG     ] example log
+2024-02-07 22:15:07,877   [  INFO      ] example log
+2024-02-07 22:15:07,877   [  WARNING   ] example log
+2024-02-07 22:15:07,878   [  ERROR     ] example log
+2024-02-07 22:15:07,878   [  CRITICAL  ] example log
+2024-02-07 22:18:44,619   [  DEBUG     ] |MainThread main.py 5 | example log
+2024-02-07 22:18:44,620   [  INFO      ] |MainThread main.py 6 | example log
+2024-02-07 22:18:44,620   [  WARNING   ] |MainThread main.py 7 | example log
+2024-02-07 22:18:44,621   [  ERROR     ] |MainThread main.py 8 | example log
+2024-02-07 22:18:44,622   [  CRITICAL  ] |MainThread main.py 9 | example log
+2024-02-07 22:19:09,748   [  DEBUG     ] | MainThread main.py 5 | example log
+2024-02-07 22:19:09,749   [  INFO      ] | MainThread main.py 6 | example log
+2024-02-07 22:19:09,750   [  WARNING   ] | MainThread main.py 7 | example log
+2024-02-07 22:19:09,750   [  ERROR     ] | MainThread main.py 8 | example log
+2024-02-07 22:19:09,750   [  CRITICAL  ] | MainThread main.py 9 | example log
+2024-02-07 22:20:06,397   [  DEBUG     ] | MainThread main.py 5 | App start with args: ['main.py']
+2024-02-07 22:20:06,398   [  INFO      ] | MainThread main.py 6 | example log
+2024-02-07 22:20:06,398   [  WARNING   ] | MainThread main.py 7 | example log
+2024-02-07 22:20:06,399   [  ERROR     ] | MainThread main.py 8 | example log
+2024-02-07 22:20:06,399   [  CRITICAL  ] | MainThread main.py 9 | example log
+2024-02-07 22:20:17,260   [  DEBUG     ] | MainThread main.py 5 | App start with args: []
+2024-02-07 22:56:23,318   [  DEBUG     ] | MainThread main.py 5 | App start with args: []
+2024-02-07 22:56:41,524   [  DEBUG     ] | MainThread config.py 20 | ConfigMeta __call__ called
+2024-02-07 22:56:41,524   [  DEBUG     ] | MainThread config.py 22 | Config already exists
+2024-02-07 22:57:01,635   [  DEBUG     ] | MainThread config.py 20 | ConfigMeta __call__ called
+2024-02-07 22:57:01,636   [  DEBUG     ] | MainThread config.py 22 | Config already exists
+2024-02-07 22:57:32,019   [  DEBUG     ] | MainThread config.py 20 | ConfigMeta __call__ called
+2024-02-07 22:57:32,020   [  DEBUG     ] | MainThread config.py 22 | Config already exists
+2024-02-07 23:00:51,776   [  DEBUG     ] | MainThread config.py 20 | ConfigMeta __call__ called
+2024-02-07 23:00:51,777   [  DEBUG     ] | MainThread config.py 22 | Config already exists
+2024-02-07 23:01:42,658   [  DEBUG     ] | MainThread config.py 20 | ConfigMeta __call__ called
+2024-02-07 23:01:42,659   [  DEBUG     ] | MainThread config.py 22 | Config already exists
+2024-02-07 23:01:42,660   [  INFO      ] | MainThread config.py 40 | Image path: C:\Users\lukas\Desktop\Extra\NASA_API\images
+2024-02-07 23:01:42,661   [  INFO      ] | MainThread config.py 41 | screen resolution: (1920, 1080)
+2024-02-07 23:01:42,661   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:01:58,016   [  DEBUG     ] | MainThread config.py 20 | ConfigMeta __call__ called
+2024-02-07 23:01:58,016   [  DEBUG     ] | MainThread config.py 22 | Config already exists
+2024-02-07 23:01:58,017   [  INFO      ] | MainThread config.py 40 | Image path: C:\Users\lukas\Desktop\Extra\NASA_API\images
+2024-02-07 23:01:58,019   [  INFO      ] | MainThread config.py 41 | screen resolution: (1920, 1080)
+2024-02-07 23:01:58,019   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:02:37,519   [  DEBUG     ] | MainThread config.py 20 | ConfigMeta __call__ called
+2024-02-07 23:02:37,519   [  DEBUG     ] | MainThread config.py 22 | Config already exists
+2024-02-07 23:02:37,521   [  INFO      ] | MainThread config.py 40 | Image path: C:\Users\lukas\Desktop\Extra\NASA_API\images
+2024-02-07 23:02:37,521   [  INFO      ] | MainThread config.py 41 | screen resolution: (1920, 1080)
+2024-02-07 23:02:37,521   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:04:44,179   [  DEBUG     ] | MainThread config.py 20 | ConfigMeta __call__ called
+2024-02-07 23:04:44,180   [  DEBUG     ] | MainThread config.py 22 | Config already exists
+2024-02-07 23:04:44,181   [  INFO      ] | MainThread config.py 40 | Image path: C:\Users\lukas\Desktop\Extra\NASA_API\images
+2024-02-07 23:04:44,182   [  INFO      ] | MainThread config.py 41 | screen resolution: (1920, 1080)
+2024-02-07 23:04:44,182   [  DEBUG     ] | MainThread config.py 20 | ConfigMeta __call__ called
+2024-02-07 23:04:44,183   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:19:46,360   [  DEBUG     ] | MainThread config.py 35 | ConfigMeta __call__ called
+2024-02-07 23:19:46,361   [  DEBUG     ] | MainThread config.py 37 | Config already exists
+2024-02-07 23:19:46,362   [  INFO      ] | MainThread config.py 55 | Image path: 1
+2024-02-07 23:19:46,363   [  INFO      ] | MainThread config.py 56 | screen resolution: (1920, 1080)
+2024-02-07 23:19:46,363   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:19:50,870   [  DEBUG     ] | MainThread config.py 35 | ConfigMeta __call__ called
+2024-02-07 23:19:50,870   [  DEBUG     ] | MainThread config.py 37 | Config already exists
+2024-02-07 23:19:50,872   [  INFO      ] | MainThread config.py 55 | Image path: 1
+2024-02-07 23:19:50,872   [  INFO      ] | MainThread config.py 56 | screen resolution: (1920, 1080)
+2024-02-07 23:19:50,872   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:19:52,763   [  DEBUG     ] | MainThread config.py 35 | ConfigMeta __call__ called
+2024-02-07 23:19:52,764   [  DEBUG     ] | MainThread config.py 37 | Config already exists
+2024-02-07 23:19:52,765   [  INFO      ] | MainThread config.py 55 | Image path: 1
+2024-02-07 23:19:52,766   [  INFO      ] | MainThread config.py 56 | screen resolution: (1920, 1080)
+2024-02-07 23:19:52,766   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:19:54,539   [  DEBUG     ] | MainThread config.py 35 | ConfigMeta __call__ called
+2024-02-07 23:19:54,539   [  DEBUG     ] | MainThread config.py 37 | Config already exists
+2024-02-07 23:19:54,541   [  INFO      ] | MainThread config.py 55 | Image path: 1
+2024-02-07 23:19:54,541   [  INFO      ] | MainThread config.py 56 | screen resolution: (1920, 1080)
+2024-02-07 23:19:54,541   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:19:55,727   [  DEBUG     ] | MainThread config.py 35 | ConfigMeta __call__ called
+2024-02-07 23:19:55,727   [  DEBUG     ] | MainThread config.py 37 | Config already exists
+2024-02-07 23:19:55,728   [  INFO      ] | MainThread config.py 55 | Image path: 1
+2024-02-07 23:19:55,729   [  INFO      ] | MainThread config.py 56 | screen resolution: (1920, 1080)
+2024-02-07 23:19:55,729   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:20:11,417   [  DEBUG     ] | MainThread config.py 35 | ConfigMeta __call__ called
+2024-02-07 23:20:11,417   [  DEBUG     ] | MainThread config.py 37 | Config already exists
+2024-02-07 23:21:28,510   [  DEBUG     ] | MainThread config.py 35 | ConfigMeta __call__ called
+2024-02-07 23:21:28,511   [  DEBUG     ] | MainThread config.py 37 | Config already exists
+2024-02-07 23:22:58,080   [  DEBUG     ] | MainThread config.py 35 | ConfigMeta __call__ called
+2024-02-07 23:22:58,080   [  DEBUG     ] | MainThread config.py 37 | Config already exists
+2024-02-07 23:22:58,081   [  CRITICAL  ] | MainThread config.py 20 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:24:50,625   [  DEBUG     ] | MainThread config.py 35 | ConfigMeta __call__ called
+2024-02-07 23:24:50,627   [  DEBUG     ] | MainThread config.py 37 | Config already exists
+2024-02-07 23:31:08,745   [  DEBUG     ] | MainThread config.py 37 | ConfigMeta __call__ called
+2024-02-07 23:31:08,746   [  DEBUG     ] | MainThread config.py 39 | Config already exists
+2024-02-07 23:33:54,864   [  DEBUG     ] | MainThread config.py 38 | ConfigMeta __call__ called
+2024-02-07 23:33:54,864   [  DEBUG     ] | MainThread config.py 40 | Config already exists
+2024-02-07 23:33:54,866   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:37:06,947   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-07 23:37:06,948   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-07 23:37:17,901   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-07 23:37:17,901   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-07 23:37:17,902   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:37:31,588   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-07 23:37:31,589   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-07 23:37:50,032   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-07 23:37:50,032   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-07 23:37:50,034   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:37:50,034   [  INFO      ] | MainThread config.py 60 | Image path: 
+2024-02-07 23:37:50,034   [  INFO      ] | MainThread config.py 61 | screen resolution: 
+2024-02-07 23:37:50,034   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:38:45,875   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-07 23:38:45,875   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-07 23:38:45,877   [  INFO      ] | MainThread config.py 60 | Image path: 
+2024-02-07 23:38:45,877   [  INFO      ] | MainThread config.py 61 | screen resolution: 
+2024-02-07 23:38:45,877   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:38:58,168   [  DEBUG     ] | MainThread config.py 39 | ConfigMeta __call__ called
+2024-02-07 23:38:58,169   [  DEBUG     ] | MainThread config.py 41 | Config already exists
+2024-02-07 23:38:58,171   [  INFO      ] | MainThread config.py 59 | Image path: C:\Users\lukas\Desktop\Extra\NASA_API\images
+2024-02-07 23:38:58,171   [  INFO      ] | MainThread config.py 60 | screen resolution: (1920, 1080)
+2024-02-07 23:38:58,172   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:39:19,678   [  DEBUG     ] | MainThread config.py 39 | ConfigMeta __call__ called
+2024-02-07 23:39:19,678   [  DEBUG     ] | MainThread config.py 41 | Config already exists
+2024-02-07 23:39:19,680   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:39:19,680   [  INFO      ] | MainThread config.py 59 | Image path: 
+2024-02-07 23:39:19,680   [  INFO      ] | MainThread config.py 60 | screen resolution: (1920, 1080)
+2024-02-07 23:39:19,680   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:40:03,049   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-07 23:40:03,049   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-07 23:40:03,050   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:40:18,277   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-07 23:40:18,277   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-07 23:40:18,278   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:40:18,279   [  INFO      ] | MainThread config.py 60 | Image path: 
+2024-02-07 23:40:18,279   [  INFO      ] | MainThread config.py 61 | screen resolution: (1920, 1080)
+2024-02-07 23:40:18,279   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:40:41,889   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-07 23:40:41,889   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-07 23:40:41,890   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:40:41,891   [  INFO      ] | MainThread config.py 60 | Image path: 
+2024-02-07 23:40:41,891   [  INFO      ] | MainThread config.py 61 | screen resolution: (1920, 1080)
+2024-02-07 23:40:41,891   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:41:13,383   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-07 23:41:13,384   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-07 23:41:13,384   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-07 23:41:13,384   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:41:13,384   [  INFO      ] | MainThread config.py 60 | Image path: 
+2024-02-07 23:41:13,384   [  INFO      ] | MainThread config.py 61 | screen resolution: 
+2024-02-07 23:41:13,385   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:41:28,971   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-07 23:41:28,971   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-07 23:41:28,971   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-07 23:41:28,971   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:41:28,972   [  INFO      ] | MainThread config.py 60 | Image path: 
+2024-02-07 23:41:28,972   [  INFO      ] | MainThread config.py 61 | screen resolution: 
+2024-02-07 23:41:28,972   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:43:36,281   [  DEBUG     ] | MainThread config.py 44 | ConfigMeta __call__ called
+2024-02-07 23:43:36,281   [  DEBUG     ] | MainThread config.py 46 | Config already exists
+2024-02-07 23:43:36,281   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-07 23:43:36,282   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:43:36,282   [  INFO      ] | MainThread config.py 64 | Image path: 
+2024-02-07 23:43:36,282   [  INFO      ] | MainThread config.py 65 | screen resolution: (0, 0)
+2024-02-07 23:43:36,282   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:49:42,423   [  DEBUG     ] | MainThread config.py 44 | ConfigMeta __call__ called
+2024-02-07 23:49:42,423   [  DEBUG     ] | MainThread config.py 46 | Config already exists
+2024-02-07 23:49:42,424   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-07 23:49:57,707   [  DEBUG     ] | MainThread config.py 45 | ConfigMeta __call__ called
+2024-02-07 23:49:57,709   [  DEBUG     ] | MainThread config.py 47 | Config already exists
+2024-02-07 23:49:57,711   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-07 23:50:14,157   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:50:22,661   [  INFO      ] | MainThread config.py 65 | Image path: 
+2024-02-07 23:50:22,662   [  INFO      ] | MainThread config.py 66 | screen resolution: (0, 0)
+2024-02-07 23:50:22,663   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:50:25,877   [  DEBUG     ] | MainThread config.py 45 | ConfigMeta __call__ called
+2024-02-07 23:50:25,877   [  DEBUG     ] | MainThread config.py 47 | Config already exists
+2024-02-07 23:50:25,878   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-07 23:52:07,612   [  DEBUG     ] | MainThread config.py 45 | ConfigMeta __call__ called
+2024-02-07 23:52:07,613   [  DEBUG     ] | MainThread config.py 47 | Config already exists
+2024-02-07 23:52:07,614   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-07 23:54:02,829   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:54:48,056   [  INFO      ] | MainThread config.py 65 | Image path: 
+2024-02-07 23:54:48,057   [  INFO      ] | MainThread config.py 66 | screen resolution: (0, 0)
+2024-02-07 23:54:48,059   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:54:49,774   [  DEBUG     ] | MainThread config.py 45 | ConfigMeta __call__ called
+2024-02-07 23:54:49,774   [  DEBUG     ] | MainThread config.py 47 | Config already exists
+2024-02-07 23:54:49,774   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-07 23:55:18,503   [  DEBUG     ] | MainThread config.py 45 | ConfigMeta __call__ called
+2024-02-07 23:55:18,504   [  DEBUG     ] | MainThread config.py 47 | Config already exists
+2024-02-07 23:55:42,772   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-07 23:55:47,541   [  DEBUG     ] | MainThread config.py 45 | ConfigMeta __call__ called
+2024-02-07 23:55:47,542   [  DEBUG     ] | MainThread config.py 47 | Config already exists
+2024-02-07 23:55:50,523   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-07 23:56:05,085   [  DEBUG     ] | MainThread config.py 44 | ConfigMeta __call__ called
+2024-02-07 23:56:05,086   [  DEBUG     ] | MainThread config.py 46 | Config already exists
+2024-02-07 23:56:26,239   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-07 23:56:27,719   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:56:30,404   [  INFO      ] | MainThread config.py 64 | Image path: 
+2024-02-07 23:56:30,405   [  INFO      ] | MainThread config.py 65 | screen resolution: (0, 0)
+2024-02-07 23:56:30,405   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:56:54,370   [  DEBUG     ] | MainThread config.py 45 | ConfigMeta __call__ called
+2024-02-07 23:56:54,371   [  DEBUG     ] | MainThread config.py 47 | Config already exists
+2024-02-07 23:56:54,371   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-07 23:56:54,371   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:56:54,371   [  INFO      ] | MainThread config.py 65 | Image path: 
+2024-02-07 23:56:54,372   [  INFO      ] | MainThread config.py 66 | screen resolution: (0, 0)
+2024-02-07 23:56:54,372   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:56:59,428   [  DEBUG     ] | MainThread config.py 45 | ConfigMeta __call__ called
+2024-02-07 23:56:59,428   [  DEBUG     ] | MainThread config.py 47 | Config already exists
+2024-02-07 23:56:59,428   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-07 23:56:59,429   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:56:59,429   [  INFO      ] | MainThread config.py 65 | Image path: 
+2024-02-07 23:56:59,429   [  INFO      ] | MainThread config.py 66 | screen resolution: (0, 0)
+2024-02-07 23:56:59,429   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-07 23:57:31,781   [  DEBUG     ] | MainThread config.py 45 | ConfigMeta __call__ called
+2024-02-07 23:57:31,781   [  DEBUG     ] | MainThread config.py 47 | Config already exists
+2024-02-07 23:57:31,781   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-07 23:57:31,781   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-07 23:57:31,782   [  INFO      ] | MainThread config.py 65 | Image path: 
+2024-02-07 23:57:31,782   [  INFO      ] | MainThread config.py 66 | screen resolution: (0, 0)
+2024-02-07 23:57:31,782   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:05:33,397   [  DEBUG     ] | MainThread config.py 45 | ConfigMeta __call__ called
+2024-02-08 00:05:33,397   [  DEBUG     ] | MainThread config.py 47 | Config already exists
+2024-02-08 00:05:33,397   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:05:42,217   [  DEBUG     ] | MainThread config.py 45 | ConfigMeta __call__ called
+2024-02-08 00:05:42,218   [  DEBUG     ] | MainThread config.py 47 | Config already exists
+2024-02-08 00:05:42,218   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:05:42,218   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-08 00:05:42,218   [  INFO      ] | MainThread config.py 65 | Image path: 
+2024-02-08 00:05:42,219   [  INFO      ] | MainThread config.py 66 | screen resolution: (0, 0)
+2024-02-08 00:05:42,219   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:06:07,118   [  DEBUG     ] | MainThread config.py 46 | ConfigMeta __call__ called
+2024-02-08 00:06:07,119   [  DEBUG     ] | MainThread config.py 48 | Config already exists
+2024-02-08 00:06:07,119   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:06:11,821   [  DEBUG     ] | MainThread config.py 46 | ConfigMeta __call__ called
+2024-02-08 00:06:11,822   [  DEBUG     ] | MainThread config.py 48 | Config already exists
+2024-02-08 00:06:11,822   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:06:11,822   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-08 00:06:11,822   [  INFO      ] | MainThread config.py 66 | Image path: 
+2024-02-08 00:06:11,823   [  INFO      ] | MainThread config.py 67 | screen resolution: (0, 0)
+2024-02-08 00:06:11,823   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:06:37,863   [  DEBUG     ] | MainThread config.py 46 | ConfigMeta __call__ called
+2024-02-08 00:06:37,863   [  DEBUG     ] | MainThread config.py 48 | Config already exists
+2024-02-08 00:06:37,864   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:06:37,864   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-08 00:06:37,864   [  INFO      ] | MainThread config.py 66 | Image path: 
+2024-02-08 00:06:37,865   [  INFO      ] | MainThread config.py 67 | screen resolution: (0, 0)
+2024-02-08 00:06:37,865   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:07:04,169   [  DEBUG     ] | MainThread config.py 46 | ConfigMeta __call__ called
+2024-02-08 00:07:04,169   [  DEBUG     ] | MainThread config.py 48 | Config already exists
+2024-02-08 00:07:04,169   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:07:04,176   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-08 00:07:04,177   [  INFO      ] | MainThread config.py 66 | Image path: 
+2024-02-08 00:07:04,177   [  INFO      ] | MainThread config.py 67 | screen resolution: (0, 0)
+2024-02-08 00:07:04,177   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:09:25,200   [  DEBUG     ] | MainThread config.py 45 | ConfigMeta __call__ called
+2024-02-08 00:09:25,200   [  DEBUG     ] | MainThread config.py 47 | Config already exists
+2024-02-08 00:09:25,200   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:10:11,794   [  DEBUG     ] | MainThread config.py 45 | ConfigMeta __call__ called
+2024-02-08 00:10:11,794   [  DEBUG     ] | MainThread config.py 47 | Config already exists
+2024-02-08 00:10:11,795   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:10:18,794   [  DEBUG     ] | MainThread config.py 45 | ConfigMeta __call__ called
+2024-02-08 00:10:18,795   [  DEBUG     ] | MainThread config.py 47 | Config already exists
+2024-02-08 00:10:18,795   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:10:27,822   [  DEBUG     ] | MainThread config.py 45 | ConfigMeta __call__ called
+2024-02-08 00:10:27,822   [  DEBUG     ] | MainThread config.py 47 | Config already exists
+2024-02-08 00:10:27,822   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:11:05,028   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-08 00:11:05,029   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-08 00:11:05,029   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:11:05,029   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-08 00:11:05,029   [  INFO      ] | MainThread config.py 60 | Image path: None
+2024-02-08 00:11:05,029   [  INFO      ] | MainThread config.py 61 | screen resolution: None
+2024-02-08 00:11:05,030   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:11:11,063   [  DEBUG     ] | MainThread config.py 39 | ConfigMeta __call__ called
+2024-02-08 00:11:11,064   [  DEBUG     ] | MainThread config.py 41 | Config already exists
+2024-02-08 00:11:11,064   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:11:11,064   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-08 00:11:11,064   [  INFO      ] | MainThread config.py 59 | Image path: None
+2024-02-08 00:11:11,064   [  INFO      ] | MainThread config.py 60 | screen resolution: None
+2024-02-08 00:11:11,065   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:11:56,581   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-08 00:11:56,582   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-08 00:11:56,582   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:12:06,941   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-08 00:12:06,941   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-08 00:12:06,942   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:12:06,942   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-08 00:12:06,942   [  INFO      ] | MainThread config.py 60 | Image path: None
+2024-02-08 00:12:06,942   [  INFO      ] | MainThread config.py 61 | screen resolution: None
+2024-02-08 00:12:06,943   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:12:19,873   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-08 00:12:19,873   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-08 00:12:19,873   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:12:27,753   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-08 00:12:27,754   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-08 00:12:27,754   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:12:48,498   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-08 00:12:48,499   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-08 00:12:48,499   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:13:01,394   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-08 00:13:01,394   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-08 00:13:01,394   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:13:14,627   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-08 00:13:14,627   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-08 00:13:14,627   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:13:14,627   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-08 00:13:14,628   [  INFO      ] | MainThread config.py 60 | Image path: None
+2024-02-08 00:13:14,628   [  INFO      ] | MainThread config.py 61 | screen resolution: None
+2024-02-08 00:13:14,628   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:13:37,333   [  DEBUG     ] | MainThread config.py 39 | ConfigMeta __call__ called
+2024-02-08 00:13:37,334   [  DEBUG     ] | MainThread config.py 41 | Config already exists
+2024-02-08 00:13:37,334   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:13:37,335   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-08 00:13:37,335   [  INFO      ] | MainThread config.py 59 | Image path: None
+2024-02-08 00:13:37,335   [  INFO      ] | MainThread config.py 60 | screen resolution: None
+2024-02-08 00:13:37,336   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:15:13,569   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-08 00:15:13,570   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-08 00:15:13,570   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:15:13,570   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-08 00:15:13,570   [  INFO      ] | MainThread config.py 61 | Image path: None
+2024-02-08 00:15:13,571   [  INFO      ] | MainThread config.py 62 | screen resolution: None
+2024-02-08 00:15:13,571   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:16:17,556   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-08 00:16:17,557   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-08 00:16:17,557   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:16:17,557   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-08 00:16:17,558   [  INFO      ] | MainThread config.py 61 | Image path: None
+2024-02-08 00:16:17,558   [  INFO      ] | MainThread config.py 62 | screen resolution: None
+2024-02-08 00:16:17,558   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:16:24,797   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-08 00:16:24,798   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-08 00:16:24,798   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:16:24,798   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-08 00:16:24,798   [  INFO      ] | MainThread config.py 61 | Image path: <property object at 0x00000271823944A0>
+2024-02-08 00:16:24,799   [  INFO      ] | MainThread config.py 62 | screen resolution: <property object at 0x000002718237F740>
+2024-02-08 00:16:24,799   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:17:22,715   [  DEBUG     ] | MainThread config.py 40 | ConfigMeta __call__ called
+2024-02-08 00:17:22,715   [  DEBUG     ] | MainThread config.py 42 | Config already exists
+2024-02-08 00:17:22,716   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:17:22,716   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-08 00:17:22,716   [  INFO      ] | MainThread config.py 61 | Image path: <property object at 0x000002A5F73444A0>
+2024-02-08 00:17:22,716   [  INFO      ] | MainThread config.py 62 | screen resolution: <property object at 0x000002A5F732F740>
+2024-02-08 00:17:22,717   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:18:33,061   [  DEBUG     ] | MainThread config.py 43 | ConfigMeta __call__ called
+2024-02-08 00:18:33,061   [  DEBUG     ] | MainThread config.py 45 | Config already exists
+2024-02-08 00:18:33,062   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:18:38,829   [  DEBUG     ] | MainThread config.py 43 | ConfigMeta __call__ called
+2024-02-08 00:18:38,829   [  DEBUG     ] | MainThread config.py 45 | Config already exists
+2024-02-08 00:18:38,829   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:18:38,830   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'int'>
+2024-02-08 00:18:38,830   [  INFO      ] | MainThread config.py 64 | Image path: 
+2024-02-08 00:18:38,830   [  INFO      ] | MainThread config.py 65 | screen resolution: (0, 0)
+2024-02-08 00:18:38,830   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:18:57,035   [  DEBUG     ] | MainThread config.py 43 | ConfigMeta __call__ called
+2024-02-08 00:18:57,035   [  DEBUG     ] | MainThread config.py 45 | Config already exists
+2024-02-08 00:18:57,035   [  CRITICAL  ] | MainThread config.py 23 | Screen resolution should be of type tuple[int, int], current <class 'int'>
+2024-02-08 00:19:20,481   [  DEBUG     ] | MainThread config.py 43 | ConfigMeta __call__ called
+2024-02-08 00:19:20,481   [  DEBUG     ] | MainThread config.py 45 | Config already exists
+2024-02-08 00:19:20,482   [  CRITICAL  ] | MainThread config.py 23 | image_path should be of type str, current <class 'NoneType'>
+2024-02-08 00:19:20,483   [  INFO      ] | MainThread config.py 64 | Image path: 
+2024-02-08 00:19:20,483   [  INFO      ] | MainThread config.py 65 | screen resolution: (1920, 1080)
+2024-02-08 00:19:20,483   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
+2024-02-08 00:19:27,120   [  DEBUG     ] | MainThread config.py 43 | ConfigMeta __call__ called
+2024-02-08 00:19:27,120   [  DEBUG     ] | MainThread config.py 45 | Config already exists
+2024-02-08 00:19:27,122   [  INFO      ] | MainThread config.py 64 | Image path: C:\Users\lukas\Desktop\Extra\NASA_API\images
+2024-02-08 00:19:27,122   [  INFO      ] | MainThread config.py 65 | screen resolution: (1920, 1080)
+2024-02-08 00:19:27,122   [  DEBUG     ] | MainThread main.py 6 | App start with args: []
