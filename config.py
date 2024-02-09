@@ -1,12 +1,11 @@
 from __future__ import annotations
 
-import os.path
 import ctypes
 import functools
+import os.path
+from typing import Any, Callable
 
 from logger import app_logger
-from typing import Callable, Any
-
 
 setter_types = Callable[[Any, tuple[int, int] | str], None]
 
