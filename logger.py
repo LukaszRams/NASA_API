@@ -1,3 +1,7 @@
+"""
+Logger configuration
+"""
+
 import logging
 from logging.handlers import RotatingFileHandler
 
@@ -6,13 +10,14 @@ class StreamFormatter(logging.Formatter):
     """
     Custom formatter for stream handling adding log colouring according to level
     """
+
     grey = "\x1b\033[37m"
     green = "\x1b\033[92m"
     yellow = "\x1b\033[33m"
     red = "\x1b\033[95m"
     magenta = "\x1b\033[91m"
     reset = "\x1b[0m"
-    fmt: str = '%(asctime)-25s [  %(levelname)-10s] | %(threadName)s %(filename)s %(lineno)d | %(message)s'
+    fmt: str = "%(asctime)-25s [  %(levelname)-10s] | %(threadName)s %(filename)s %(lineno)d | %(message)s"
 
     FORMATS = {
         logging.DEBUG: grey + fmt + reset,

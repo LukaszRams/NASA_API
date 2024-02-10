@@ -1,10 +1,11 @@
 [tool.poetry]
-name = "nasa-api"
+name = "NASA_API"
 version = "0.1.0"
 description = "An application using the EPIC DAILY \"BLUE MARBLE\" API to download images of the earth, edit them and set them as a desktop background."
 authors = ["Łukasz Rams <lukaszrams2@gmail.com>"]
 license = "MIT"
 readme = "README.md"
+packages = [{include = "image"}]
 
 [tool.poetry.dependencies]
 python = ">3.10,<3.13"
@@ -12,10 +13,43 @@ pillow = "^10.2.0"
 requests = "^2.31.0"
 pywin32 = "^306"
 
-[tool.poetry.group.dev.dependencies]
+[tool.poetry.group.build.dependencies]
 pyinstaller = "^6.3.0"
+
+[tool.poetry.group.dev.dependencies]
 isort = "^5.13.2"
+mypy = "^1.8.0"
+pylint = "^3.0.3"
+flake8 = "^7.0.0"
+types-requests = "^2.31.0.20240125"
+types-pillow = "^10.2.0.20240206"
+black = "^24.1.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ['py312']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+
+[tool.pylint.MESSAGES_CONTROL]
+disable='W1203'
+
+[tool.pylint.MASTER]
+ignore="""
+requirements.txt,
+requirements_dev.txt,
+NASA_API.log,
+pyproject.toml,
+Makefile,
+poetry.lock,
+README.md
+"""
+
+[tool.pylint.format]
+max-line-length = "120"

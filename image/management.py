@@ -1,10 +1,14 @@
+"""
+File management
+"""
+
 import datetime
 import os
 import shutil
 
 from config import config
-from logger import app_logger
 from image.validators import validate_file
+from logger import app_logger
 
 
 def check_or_create_image_path() -> None:
@@ -18,7 +22,7 @@ def check_or_create_image_path() -> None:
     app_logger.info("Image path exist")
 
 
-def check_wallpapers() -> tuple[str, list[str], list[str]]:
+def check_wallpapers() -> tuple[str | None, list[str], list[str]]:
     """
     Retrieves the date of the latest image from the folder, if the date is newer than the current date, forces a new
     image to be downloaded and returns error information about the folder
@@ -37,7 +41,7 @@ def check_wallpapers() -> tuple[str, list[str], list[str]]:
             continue
         invalid.append(file)
     app_logger.debug(f"Number of valid/invalid files: {len(valid)}/{len(invalid)}")
-    return max(valid)[:-4] if valid else None, valid, invalid
+    return max(valid) if valid else None, valid, invalid
 
 
 def generate_code(date: str) -> str:

@@ -1,3 +1,7 @@
+"""
+Main file of the app
+"""
+
 import ctypes
 import os
 import sys
@@ -25,13 +29,17 @@ def display_wallpapers() -> None:
         time.sleep(change_wallpaper_interval)
 
 
-def main():
+def main() -> None:
+    """
+    Main loop of the program
+    :return:
+    """
     while True:  # Checks for new data every half hour
         check_or_create_image_path()
         check_new_data()
         display_wallpapers()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app_logger.debug(f"App start with args: {sys.argv[1:]}")
     main()

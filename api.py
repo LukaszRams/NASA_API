@@ -1,3 +1,7 @@
+"""
+API Client
+"""
+
 import os
 import threading
 
@@ -17,13 +21,13 @@ def check_new_data() -> None:
     # get last image
     try:
         app_logger.info("Connecting to API")
-        request = requests.get("https://epic.gsfc.nasa.gov/api/natural")
-        request.raise_for_status()
-        request = request.json()
+        response = requests.get("https://epic.gsfc.nasa.gov/api/natural", timeout=30)
+        response.raise_for_status()
+        response_json = response.json()
 
         app_logger.debug("Response parsed to json")
 
-        last_record = request[-1]
+        last_record = response_json[-1]
 
         # generate code
         code = generate_code(last_record["date"])
@@ -38,7 +42,7 @@ def check_new_data() -> None:
         if not latest or latest < code:
 
             # download the latest photos
-            for record in request:
+            for record in response_json:
                 start_thread(record)
 
             # delete old valid
@@ -53,24 +57,23 @@ def check_new_data() -> None:
         app_logger.critical(f"Connection Error: {exception}")
 
 
-def start_thread(record: dict[str, str | dict[str, str]]) -> None:
+def start_thread(record: dict[str, str]) -> None:
     """
     Collect data from API record, create and start thread
     :param record: record of the data from API
     :return: nothing
     """
-
-    code = generate_code(record["date"])
-    thread_name = f"Thread_{record["image"]}"
-    kwargs = {
-        "code": code,
-        "image_name": record["image"]
-    }
+    date = record["date"]
+    code = generate_code(date)
+    thread_name = f"Thread_{record['image']}"
+    kwargs = {"code": code, "image_name": record["image"]}
     # create Thread object
-    thread = threading.Thread(target=download_and_save_image,
-                              name=thread_name,
-                              kwargs=kwargs,
-                              daemon=True)
+    thread = threading.Thread(
+        target=download_and_save_image,
+        name=thread_name,
+        kwargs=kwargs,
+        daemon=True,
+    )
     app_logger.debug(f"New thread initialized with kwargs: {kwargs}")
 
     # start Thread object
@@ -91,7 +94,9 @@ def download_and_save_image(code: str, image_name: str) -> None:
     try:
         app_logger.debug("Connecting to image archive and downloading image")
         request = requests.get(
-            f"https://epic.gsfc.nasa.gov/archive/natural/{code[0:4]}/{code[4:6]}/{code[6:8]}/png/{image_name}.png")
+            f"https://epic.gsfc.nasa.gov/archive/natural/" f"{code[0:4]}/{code[4:6]}/{code[6:8]}/png/{image_name}.png",
+            timeout=30,
+        )
         if request.status_code == 200:
             # path to image
             app_logger.debug("Image downloaded")

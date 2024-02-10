@@ -1,6 +1,12 @@
+"""
+Image validation
+"""
+
 import os.path
 from datetime import datetime
+
 from PIL import Image
+
 from config import config
 from logger import app_logger
 
@@ -76,11 +82,10 @@ def validate_file(file: str) -> bool:
         check_length_of_file,
         check_filename_without_extension,
         check_date_of_image,
-        check_if_file_is_not_broken
+        check_if_file_is_not_broken,
     ]
     for validator in validators:
         if not validator(file):
             app_logger.info(f"Image error detected with validator: {validator.__name__} {validator.__doc__}")
             return False
     return True
-
