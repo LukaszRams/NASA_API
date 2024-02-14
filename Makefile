@@ -51,6 +51,13 @@ export: $(VENV)
 update: $(VENV)
 	poetry update
 
+test: $(VENV)
+	$(PYTHON) -m coverage run -m unittest
+	$(PYTHON) -m coverage report -m
+	$(PYTHON) -m coverage html
+	@echo Open codecov report at http://localhost:63342/NASA_API/htmlcov/index.html?_ij_reload=RELOAD_ON_SAVE
+
+
 build: clean
 	python -m poetry install --without dev --with build
 	$(PYINSTALLER) -F --windowed --name NASA_API --specpath=./nasaApi/build --workpath=./nasaApi/build --distpath=./nasaApi main.py

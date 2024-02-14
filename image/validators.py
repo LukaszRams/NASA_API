@@ -66,7 +66,7 @@ def check_if_file_is_not_broken(file: str) -> bool:
         image = Image.open(filepath)
         image.verify()
         return image.size == config.resolution
-    except (IOError, SyntaxError) as exception:
+    except (SyntaxError, IOError) as exception:
         app_logger.critical(f"Error while validation: {exception}")
         return False
 
