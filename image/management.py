@@ -31,7 +31,7 @@ def check_wallpapers() -> tuple[str | None, list[str], list[str]]:
     files = os.listdir(config.image_path)
     app_logger.info(f"Files in folder: {files}")
 
-    # validate files
+    # validated files
     valid = []
     invalid = []
 

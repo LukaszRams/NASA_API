@@ -55,3 +55,19 @@ README.md
 
 [tool.pylint.format]
 max-line-length = "120"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+exclude = [
+    '.venv',
+    'NASA_API.log'
+]
+
+[[tool.mypy.overrides]]
+module = "parameterized"
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+

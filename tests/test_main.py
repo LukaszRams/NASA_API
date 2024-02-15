@@ -4,9 +4,9 @@ Test main.py
 
 import os
 from unittest import TestCase
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
-from parameterized import parameterized
+import parameterized
 
 from config import config
 from main import display_wallpapers
@@ -20,7 +20,7 @@ class TestDisplayWallpapers(TestCase):
     Test function display_wallpapers from main.py
     """
 
-    @parameterized.expand(
+    @parameterized.parameterized.expand(
         [
             (1, 1800),
             (2, 900),
@@ -32,9 +32,14 @@ class TestDisplayWallpapers(TestCase):
             (14, 128),
             (15, 120),
         ]
-    )
+    )  # type: ignore
     def test_for_happy_path(
-        self, listdir_mock, sleep_mock, system_parameters_mock, number_of_files, delay_time
+        self,
+        listdir_mock: MagicMock,
+        sleep_mock: MagicMock,
+        system_parameters_mock: MagicMock,
+        number_of_files: int,
+        delay_time: int,
     ) -> None:
         """
         Test if sleep time is calculated properly and called correct number of times. Check parameter of
@@ -61,7 +66,9 @@ class TestDisplayWallpapers(TestCase):
             self.assertEqual(os.path.join(base_path, file), set_wallpaper)
         self.assertEqual(number_of_files, system_parameters_mock.call_count)
 
-    def test_no_file_in_image_directory(self, listdir_mock, sleep_mock, system_parameters_mock) -> None:
+    def test_no_file_in_image_directory(
+        self, listdir_mock: MagicMock, sleep_mock: MagicMock, system_parameters_mock: MagicMock
+    ) -> None:
         """
         Check if function no throw error when no file in directory and no call set wallpaper
         In this case function should return None and app should download files from API
@@ -76,7 +83,13 @@ class TestDisplayWallpapers(TestCase):
         self.assertEqual(system_parameters_mock.call_count, 0)
 
     @patch("main.delete_files")
-    def test_system_parameters_side_effect(self, delete_files_mock, listdir_mock, sleep_mock, system_parameters_mock):
+    def test_system_parameters_side_effect(
+        self,
+        delete_files_mock: MagicMock,
+        listdir_mock: MagicMock,
+        sleep_mock: MagicMock,
+        system_parameters_mock: MagicMock,
+    ) -> None:
         """
         Check if function properly remove file when error while set wallpaper.
         :param delete_files_mock: mock delete function

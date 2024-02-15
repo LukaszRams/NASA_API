@@ -3,14 +3,22 @@ Test for image validators
 """
 
 import os
-from datetime import timedelta
+from datetime import datetime, timedelta
 from unittest import TestCase
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 import PIL.Image
 from parameterized import parameterized
 
-from image.validators import *
+from config import config
+from image.validators import (
+    check_date_of_image,
+    check_file_extension,
+    check_filename_without_extension,
+    check_if_file_is_not_broken,
+    check_length_of_file,
+    validate_file,
+)
 
 
 class TestValidators(TestCase):
@@ -25,11 +33,11 @@ class TestValidators(TestCase):
         self.not_existing_file = "this_file_not_exist"
         self.empty_file = os.path.join(config.image_path, "empty_file.png")
 
-        with open(self.empty_file, "w") as fp:
+        with open(self.empty_file, "w", encoding="utf-8") as fp:
             pass
 
         self.broken_file = os.path.join(config.image_path, "broken_file.png")
-        with open(self.broken_file, "w") as fp:
+        with open(self.broken_file, "w", encoding="utf-8") as fp:
             fp.write("some text")
 
         # for correct file name we need date in future
@@ -60,7 +68,7 @@ class TestValidators(TestCase):
             ("file_with.png_in_the_middle", False),
             ("file.png", True),
         ]
-    )
+    )  # type: ignore
     def test_file_extension_validator(self, filename: str, is_valid: bool) -> None:
         """
         Function check_file_extension should return True if filename ends with .png
@@ -78,7 +86,7 @@ class TestValidators(TestCase):
             ("19_characters__.png", False),
             ("YYYYmmddHHMMSS.mp4", True),
         ]
-    )
+    )  # type: ignore
     def test_length_of_filename_validator(self, filename: str, is_valid: bool) -> None:
         """
         Filenames has format YYYmmddHHMMSS.png so its length should be 18 characters
@@ -99,7 +107,7 @@ class TestValidators(TestCase):
             ("01234567891234.mp4", True),
             ("12345678912345.mp4", True),
         ]
-    )
+    )  # type: ignore
     def test_filename_without_extension_validator(self, filename: str, is_valid: bool) -> None:
         """
         Filenames without extension might be mapped to int
@@ -115,10 +123,10 @@ class TestValidators(TestCase):
             ("20231212121222.png", datetime(2024, 10, 10, 12, 12, 12), False),  # blank filename
             ("20241212121222.png", datetime(2022, 10, 10, 12, 12, 12), True),
         ]
-    )
+    )  # type: ignore
     @patch("image.validators.datetime")
     def test_check_date_of_image(
-        self, filename: str, datetime_now: datetime, is_valid: bool, datetime_now_mock: patch
+        self, filename: str, datetime_now: datetime, is_valid: bool, datetime_now_mock: MagicMock
     ) -> None:
         """
         Test if validator make comparison between datetime and file
@@ -160,7 +168,7 @@ class TestValidators(TestCase):
             # only one correct
             [True, [True, True, True, True, True]],
         ]
-    )
+    )  # type: ignore
     @patch("image.validators.check_file_extension")  # mock_validator_1
     @patch("image.validators.check_length_of_file")  # mock_validator_2
     @patch("image.validators.check_filename_without_extension")  # mock_validator_3
@@ -170,11 +178,11 @@ class TestValidators(TestCase):
         self,
         is_valid: bool,
         validator_results: list[bool],
-        mock_validator_1: patch,
-        mock_validator_2: patch,
-        mock_validator_3: patch,
-        mock_validator_4: patch,
-        mock_validator_5: patch,
+        mock_validator_1: MagicMock,
+        mock_validator_2: MagicMock,
+        mock_validator_3: MagicMock,
+        mock_validator_4: MagicMock,
+        mock_validator_5: MagicMock,
     ) -> None:
         """
         Test for validate file. All validators are patched, so we set return values and check validation output
