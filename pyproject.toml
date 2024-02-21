@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "NASA_API"
-version = "0.1.0"
+version = "0.1.1"
 description = "An application using the EPIC DAILY \"BLUE MARBLE\" API to download images of the earth, edit them and set them as a desktop background."
 authors = ["Łukasz Rams <lukaszrams2@gmail.com>"]
 license = "MIT"

@@ -5,3 +5,5 @@ dist/
 nasaApi/
 NASA_API.log
 images/
+.coverage
+htmlcov/
