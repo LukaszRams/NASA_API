@@ -17,26 +17,22 @@ and if new data is available updating.
 ### Development
 1. Use Poetry to create virtual environment and install dependencies
 ```commandline
-python -m poetry shell
-poetry install
+make setup
 ```
 
 2. Run code
 ```commandline
-python NASA_Api.py
+make run
 ```
 
 ### Building
 
-1. Use Poetry to create virtual environment and install dependencies
-```commandline
-python -m poetry shell
-poetry install
-```
-        
 2. Build your application
+
+Simply call
+
 ```commandline
-pyinstaller -F --windowed --specpath=./nasaApi/build --workpath=./nasaApi/build --distpath=./nasaApi NASA_Api.py
+make build
 ```
 
 ### Launching
