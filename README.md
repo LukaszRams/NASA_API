@@ -43,4 +43,4 @@ pyinstaller -F --windowed --specpath=./nasaApi/build --workpath=./nasaApi/build 
 
 Go to the ***nasaApi*** folder and double-click on ***NASA_Api.exe***
 
-*If you want the application to run automatically on startup, add it to the autostart*
+*If you want the application to run automatically on startup, add it to autostart*
