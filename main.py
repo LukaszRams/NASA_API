@@ -21,7 +21,7 @@ def display_wallpapers() -> None:
     number_of_files = len(os.listdir(config.image_path))
     app_logger.info(f"Current number of images: {number_of_files}")
     if number_of_files:
-        change_wallpaper_interval = 1800 // number_of_files
+        change_wallpaper_interval = config.sync_interval // number_of_files
         app_logger.info(f"Wallpapers will be changed every {change_wallpaper_interval} seconds")
         for file in os.listdir(config.image_path):
             try:
@@ -39,7 +39,6 @@ def main() -> None:
     Main loop of the program
     :return:
     """
-    # TODO: export sync delay to config
     while True:  # Checks for new data every half hour
         check_or_create_image_path()
         check_new_data()

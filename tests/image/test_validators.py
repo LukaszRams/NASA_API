@@ -169,30 +169,23 @@ class TestValidators(TestCase):
             [True, [True, True, True, True, True]],
         ]
     )  # type: ignore
-    @patch("image.validators.check_file_extension")  # mock_validator_1
-    @patch("image.validators.check_length_of_file")  # mock_validator_2
-    @patch("image.validators.check_filename_without_extension")  # mock_validator_3
-    @patch("image.validators.check_date_of_image")  # mock_validator_4
-    @patch("image.validators.check_if_file_is_not_broken")  # mock_validator_5
-    def test_validate_file(
-        self,
-        is_valid: bool,
-        validator_results: list[bool],
-        mock_validator_1: MagicMock,
-        mock_validator_2: MagicMock,
-        mock_validator_3: MagicMock,
-        mock_validator_4: MagicMock,
-        mock_validator_5: MagicMock,
-    ) -> None:
+    def test_validate_file(self, is_valid: bool, validator_results: list[bool]) -> None:
         """
         Test for validate file. All validators are patched, so we set return values and check validation output
         :return:
         """
-        mock_config = {"__name__": "", "__doc__": ""}
-        mocks = [mock_validator_1, mock_validator_2, mock_validator_3, mock_validator_4, mock_validator_5]
-        for mock, return_value in zip(mocks, validator_results):
-            mock.return_value = return_value
-            mock.configure_mock(**mock_config)
+        with (
+            patch("image.validators.check_file_extension") as mock_validator_1,
+            patch("image.validators.check_length_of_file") as mock_validator_2,
+            patch("image.validators.check_filename_without_extension") as mock_validator_3,
+            patch("image.validators.check_date_of_image") as mock_validator_4,
+            patch("image.validators.check_if_file_is_not_broken") as mock_validator_5,
+        ):
+            mock_config = {"__name__": "", "__doc__": ""}
+            mocks = [mock_validator_1, mock_validator_2, mock_validator_3, mock_validator_4, mock_validator_5]
+            for mock, return_value in zip(mocks, validator_results):
+                mock.return_value = return_value
+                mock.configure_mock(**mock_config)
 
-        status = validate_file("")
-        self.assertEqual(is_valid, status)
+            status = validate_file("")
+            self.assertEqual(is_valid, status)

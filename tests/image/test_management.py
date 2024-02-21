@@ -38,24 +38,21 @@ class TestImageManagement(TestCase):
     @parameterized.parameterized.expand(
         [[["file", "file", "file"]], [["file", "dir", "dir"]], [["dir", "file", "file"]]]
     )  # type: ignore
-    @patch("image.management.os")
-    @patch("image.management.shutil")
-    def test_delete_files(self, files: list[str], shutil_mock: MagicMock, os_mock: MagicMock) -> None:
+    def test_delete_files(self, files: list[str]) -> None:
         """
         Check if delete_files function can delete file or directory
         :param files: list of name to be concatenated with image_dir and deleted
-        :param shutil_mock: mock for shutil module
-        :param os_mock: mock for os module
         :return:
         """
-        os_mock.remove.return_value = None
-        shutil_mock.rmtree.return_value = None
-        os_mock.path.join.side_effect = lambda _, value: value
-        os_mock.path.isfile.side_effect = lambda value: value.endswith("file")
-        delete_files(files)
-        counter = Counter(files)
-        self.assertEqual(os_mock.remove.call_count, counter["file"])
-        self.assertEqual(shutil_mock.rmtree.call_count, counter["dir"])
+        with patch("image.management.os") as os_mock, patch("image.management.shutil") as shutil_mock:
+            os_mock.remove.return_value = None
+            shutil_mock.rmtree.return_value = None
+            os_mock.path.join.side_effect = lambda _, value: value
+            os_mock.path.isfile.side_effect = lambda value: value.endswith("file")
+            delete_files(files)
+            counter = Counter(files)
+            self.assertEqual(os_mock.remove.call_count, counter["file"])
+            self.assertEqual(shutil_mock.rmtree.call_count, counter["dir"])
 
     def test_generate_code(self) -> None:
         """
@@ -92,15 +89,12 @@ class TestImageManagement(TestCase):
             ],
         ]
     )  # type: ignore
-    @patch("image.management.validate_file")
     def test_check_wallpapers(
         self,
         files: list[str],
         oldest_file: str | None,
         valid: list[str],
         invalid: list[str],
-        validator_mock: MagicMock,
-        os_mock: MagicMock,
     ) -> None:
         """
         Test if check_wallpapers run validate_file function and report status in correct way
@@ -108,13 +102,12 @@ class TestImageManagement(TestCase):
         :param oldest_file: the oldest file
         :param valid: list of valid files
         :param invalid: list of invalid files
-        :param validator_mock: mock for validator
-        :param os_mock: unused mock for os
         :return:
         """
-        os_mock.listdir.return_value = files
-        validator_mock.side_effect = lambda filename: not filename.endswith("invalid")
-        result = check_wallpapers()
-        self.assertEqual(oldest_file, result[0])
-        self.assertListEqual(valid, result[1])
-        self.assertListEqual(invalid, result[2])
+        with patch("image.management.os") as os_mock, patch("image.management.validate_file") as validator_mock:
+            os_mock.listdir.return_value = files
+            validator_mock.side_effect = lambda filename: not filename.endswith("invalid")
+            result = check_wallpapers()
+            self.assertEqual(oldest_file, result[0])
+            self.assertListEqual(valid, result[1])
+            self.assertListEqual(invalid, result[2])
